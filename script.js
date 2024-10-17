@@ -46,9 +46,6 @@ btnNumber.forEach((numberSelected) => {
 const btnOperation = document.querySelectorAll(".operation");
 btnOperation.forEach((operationSelected) =>{
     operationSelected.addEventListener("click",() =>{
-        if(displayContent === "" ){
-            displayContent = "0";
-        }
         if(firstNumber === "" && operator === ""){
         firstNumber = displayContent;
         displayContent ="";
@@ -56,7 +53,6 @@ btnOperation.forEach((operationSelected) =>{
         operator = operationSelected.textContent;
         }else{
             operator = operationSelected.textContent;
-            btnEquals.click();
         }
         
     });
