@@ -33,7 +33,7 @@ function operate(operator,num1,num2){
     return result;
 }
 changeDisplay(0);
-let firstNumber="",operator="", displayContent="";
+let firstNumber="",operator="", displayContent="", dot =false;
 
 const btnNumber = document.querySelectorAll(".number"); //add number to display and saves the number to 
 btnNumber.forEach((numberSelected) => {
@@ -46,15 +46,16 @@ btnNumber.forEach((numberSelected) => {
 const btnOperation = document.querySelectorAll(".operation");
 btnOperation.forEach((operationSelected) =>{
     operationSelected.addEventListener("click",() =>{
+        
         if(firstNumber === "" && operator === ""){
         firstNumber = displayContent;
         displayContent ="";
         changeDisplay(0);
         operator = operationSelected.textContent;
+        dot = false;
         }else{
             operator = operationSelected.textContent;
         }
-        
     });
 });
 
@@ -68,6 +69,7 @@ btnEquals.addEventListener("click",()  => {
         displayContent = "0";
         firstNumber ="";
         operator = "";
+        dot = false;
         return;
     }
     displayContent= operate(operator,firstNumber,displayContent).toString();
@@ -77,6 +79,7 @@ btnEquals.addEventListener("click",()  => {
     changeDisplay(finalDisplay);
     displayContent ="";
     operator ="";
+    dot = false;
 });
 
 const btnClear = document.querySelector(".clear");
@@ -91,3 +94,15 @@ function changeDisplay(displayContent){
     const display = document.querySelector(".innerDisplay");
     display.textContent = displayContent;
 }
+
+const btnDot = document.querySelector(".point");
+btnDot.addEventListener("click",() => {
+    console.log(displayContent)
+    if (dot === true){
+        return;
+    }
+    displayContent+=".";
+    console.log(displayContent)
+    dot = true;
+    changeDisplay(displayContent)
+})
