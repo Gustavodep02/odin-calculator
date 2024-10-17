@@ -19,7 +19,6 @@ function operate(operator,num1,num2){
     
     num1 = Number(num1);
     num2 = Number(num2);
-    console.log(num1,num2);
     if(operator === "+"){
         result = add(num1,num2);
     }else if(operator === "-"){
@@ -29,7 +28,6 @@ function operate(operator,num1,num2){
     }else if (operator === "/"){
         result = divide(num1,num2); 
     }
-    console.log(result);
     return result;
 }
 changeDisplay(0);
@@ -97,12 +95,20 @@ function changeDisplay(displayContent){
 
 const btnDot = document.querySelector(".point");
 btnDot.addEventListener("click",() => {
-    console.log(displayContent)
     if (dot === true){
         return;
     }
     displayContent+=".";
-    console.log(displayContent)
     dot = true;
     changeDisplay(displayContent)
+})
+
+const btnBackspace = document.querySelector(".backspace");
+btnBackspace.addEventListener("click",() =>{
+    displayContent = displayContent.slice(0, -1);
+    if (displayContent === ""){
+        changeDisplay(0);
+    }else{
+        changeDisplay(displayContent);
+    }
 })

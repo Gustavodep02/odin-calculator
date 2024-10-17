@@ -1,14 +1,19 @@
 button {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
 }
-.container{
+
+.container {
     background-color: rgb(68, 68, 202);
-    border-width: 2px;
+    border-width: 2px; 
     padding: 10px;
     border-color: black;
     border-style: solid;
+    width: 430px;
+    box-sizing: border-box;
 }
+
 .calc {
     display: flex;
     flex-direction: column; 
@@ -18,12 +23,12 @@ button {
 
 .innerDisplay {
     margin-bottom: 20px;
-    font-size: 26px;
+    font-size: 36px;
     display: flex;
     align-items: end;
     justify-content: end;
     border-width: 2px;
-    padding: 10px;
+    padding: 20px;
     border-color: black;
     border-style: solid;
     background-color: rgb(182, 218, 223);
@@ -39,22 +44,29 @@ button {
 .line {
     display: flex;
 }
-.backspace{
-    background-color:pink;
-}
-.clear{
-    background-color: #d10000;
-}
-.number{
-    background-color: lightblue;
-}
-.operation{
-    background-color: grey;
-}
-.equals{
-    background-color: bisque;
-}
-.point{
-    background-color: lightgreen;
+
+.backspace {
+    background-color: pink;
+    flex: 1; 
 }
 
+.clear {
+    background-color: #d10000;
+}
+
+.number {
+    background-color: lightblue;
+}
+
+.operation {
+    background-color: grey;
+}
+
+.equals {
+    background-color: bisque;
+    flex: 1; 
+}
+
+.point {
+    background-color: lightgreen;
+}
